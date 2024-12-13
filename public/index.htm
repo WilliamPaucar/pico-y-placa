@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../src/styles/style.css">
+  <title>Pico y Placa Predictor</title>
+  <script>
+    async function getPrediction() {
+      const plate = document.getElementById('plate').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+
+      // Asegurarse de que los campos no estén vacíos antes de enviar la solicitud
+      if (!plate || !date || !time) {
+        alert('Por favor, ingrese todos los campos.');
+        return;
+      }
+
+      try {
+        // Enviar la solicitud GET al servidor
+        const response = await fetch(`http://localhost:3000/pico-y-placa?plate=${plate}&date=${date}&time=${time}`);
+        
+        // Verificar si la respuesta fue exitosa
+        if (!response.ok) {
+          throw new Error('Error en la respuesta del servidor');
+        }
+
+        // Obtener los datos de la respuesta como texto (o JSON si lo prefieres)
+        const data = await response.text();
+        
+        // Mostrar el resultado
+        document.getElementById('result').innerText = data;
+        document.getElementById('result').style.color = 'black'
+      } catch (error) {
+        console.error('NUMERO DE PLACA INVALIDA:', error);
+        document.getElementById('result').style.color = 'red'
+        document.getElementById('result').innerText = 'NUMERO DE PLACA INVALIDA INTENTE DE NUEVO.';
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Predictor Pico y Placa</h1>
+  
+  <!-- Formulario para ingresar los datos -->
+  <div>
+    <label for="plate">Número de Placa (ABC1234 DD1234):</label><label></label>
+    <input type="text" id="plate" name="plate" required>
+  </div>
+  <div>
+    <label for="date">Fecha (YYYY-MM-DD):</label>
+    <input type="date" id="date" name="date" required>
+  </div>
+  <div>
+    <label for="time">Hora (HH:mm):</label>
+    <input type="time" id="time" name="time" required>
+  </div>
+  
+  <button type="button" onclick="getPrediction()">Verrificar</button>
+  
+  <!-- Área para mostrar el resultado -->
+  <p id="result"></p>
+</body>
+</html>

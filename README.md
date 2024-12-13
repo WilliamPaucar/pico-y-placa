@@ -28,7 +28,7 @@ Si no tienes npm o yarn instalados, puedes obtenerlos con Node.js.
   ```bash
      npm install
      
-** O si prefieres usar yarn**:
+O si prefieres usar yarn
 
-```bash
-yarn install
+  ```bash
+     yarn install

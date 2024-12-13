@@ -15,9 +15,9 @@ export class PicoYPlaca {
     const restrictedDigits: number[] = this.getRestrictedDigitsForDay(this.dateTime.getDayOfWeek());
     const lastDigit = this.plate.getLastDigit();
     const isRushHour = this.dateTime.isRushHour();
-
+    // COMPROBAMOS SI LA PLACA TIENE RESTICCION Y TAMBIEN SE ENCUENTRA EN HORA PICO
     if (restrictedDigits.includes(lastDigit) && isRushHour) {
-      return false; // El vehículo no puede circular por Pico y Placa durante la hora pico
+      return false; //vehículo no puede circular por Pico y Placa durante la hora pico
     }
 
     return true; // El vehículo puede circular

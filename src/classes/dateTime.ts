@@ -19,9 +19,13 @@ export class DateTime {
       const minutes = this.date.getMinutes();
   
       // Definimos el rango de horas pico
-      return (
-        (hours >= 6 && hours < 9 && minutes >= 30) || (hours >= 17 && hours < 21)
-      );
+      // Rango de hora pico: 6:00 a 9:30 y 17:00 a 21:00
+      // Verificamos si la hora está entre 6:30 y 9:30
+      if ((hours === 6 && minutes >= 30) || (hours > 6 && hours < 9) || (hours === 9 && minutes <= 30)) {
+        console.log('HORARIO PICO DE 6:00 A 9:30');
+        return true;
+      }
+      return false;
     }
   
     getDayOfWeek(): number {

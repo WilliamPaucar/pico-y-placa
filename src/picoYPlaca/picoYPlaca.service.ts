@@ -12,11 +12,11 @@ export class PicoYPlacaService {
     const plate = new Plate(inputData.plate);
     const dateTime = new DateTime(inputData.date, inputData.time);
     const picoYPlaca = new PicoYPlaca(plate, dateTime);
-
+    const message = 'EL VEHICULO CON NUMERO DE PLACA'
     if (picoYPlaca.canCirculate()) {
-      return `El vehículo con placa ${inputData.plate} PUEDE CIRCULAR.`;
+      return `${message} ${inputData.plate} PUEDE CIRCULAR.`;
     } else {
-      return `El vehículo con placa ${inputData.plate} NO PUEDE CIRCULAR.`;
+      return `${message} ${inputData.plate} NO PUEDE CIRCULAR.`;
     }
   }
 }

@@ -25,7 +25,7 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local:
 
 Si no tienes npm o yarn instalados, puedes obtenerlos con Node.js.
 
-     ```bash
+  ```bash
      npm install
      
 ** O si prefieres usar yarn**:

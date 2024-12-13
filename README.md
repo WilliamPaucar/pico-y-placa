@@ -18,17 +18,17 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local:
 
 1. **Clona el repositorio**:
    ```bash
-   git clone https://github.com/tu-usuario/pico-y-placa-predictor.git
+   git clone https://github.com/WilliamPaucar/pico-y-placa.git
    cd pico-y-placa-predictor
 
 2. **Instala las dependencias**:
 
 Si no tienes npm o yarn instalados, puedes obtenerlos con Node.js.
 
-  ```bash
-  npm install
-
-O si prefieres usar yarn:
+     ```bash
+     npm install
+     
+** O si prefieres usar yarn**:
 
 ```bash
 yarn install

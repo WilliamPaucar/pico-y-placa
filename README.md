@@ -3,3 +3,20 @@
 </p>
 
 
+# Proyecto NestJS: Pico y Placa Predictor
+
+Este proyecto está basado en NestJS y proporciona una API para predecir si un vehículo puede circular o no según el sistema de "Pico y Placa" de Ecuador.
+
+## Requisitos previos
+
+1. **Node.js**: Asegúrate de tener [Node.js](https://nodejs.org/) instalado en tu máquina. Recomendamos la versión LTS.
+2. **npm**: El gestor de paquetes de Node.js, que se instala automáticamente con Node.js.
+
+## Instalación
+
+Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local:
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/tu-usuario/pico-y-placa-predictor.git
+   cd pico-y-placa-predictor
